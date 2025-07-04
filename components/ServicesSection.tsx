@@ -38,14 +38,16 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div key={index} className="text-center group">
               {/* Circular Image */}
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="w-full h-full object-cover"
-                sizes="(max-width: 768px) 100vw, 384px"
-                style={{ objectFit: "cover" }}
-              />
+              <div className="relative mb-8 mx-auto w-56 h-56">
+                <div className="absolute inset-0 rounded-full overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                    layout="fill"
+                  />
+                </div>
+              </div>
 
               {/* Content */}
               <h3 className="font-serif text-2xl font-medium mb-6 text-gray-800">
